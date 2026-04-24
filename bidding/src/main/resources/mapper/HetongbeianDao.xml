@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.HetongbeianDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.HetongbeianEntity" id="hetongbeianMap">
+        <result property="xiangmumingcheng" column="xiangmumingcheng"/>
+        <result property="zhaobiaoren" column="zhaobiaoren"/>
+        <result property="zhaobiaofanwei" column="zhaobiaofanwei"/>
+        <result property="toubiaojiezhishijian" column="toubiaojiezhishijian"/>
+        <result property="kaibiaoshijian" column="kaibiaoshijian"/>
+        <result property="xiangmudidian" column="xiangmudidian"/>
+        <result property="xiangmuzhouqi" column="xiangmuzhouqi"/>
+        <result property="qiyezhanghao" column="qiyezhanghao"/>
+        <result property="qiyemingcheng" column="qiyemingcheng"/>
+        <result property="toubiaorenzhanghao" column="toubiaorenzhanghao"/>
+        <result property="toubiaorenxingming" column="toubiaorenxingming"/>
+        <result property="hetong" column="hetong"/>
+        <result property="qianyueshijian" column="qianyueshijian"/>
+    </resultMap>
+
+    <select id="selectListView"
+            resultType="com.cl.entity.view.HetongbeianView">
+
+        SELECT hetongbeian.* FROM hetongbeian hetongbeian
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.cl.entity.view.HetongbeianView">
+        SELECT * FROM hetongbeian hetongbeian
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+
+</mapper>

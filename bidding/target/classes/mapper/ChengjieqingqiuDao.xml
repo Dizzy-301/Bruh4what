@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.ChengjieqingqiuDao">
+
+    <resultMap type="com.cl.entity.ChengjieqingqiuEntity" id="chengjieqingqiuMap">
+        <result property="xiangmumingcheng" column="xiangmumingcheng"/>
+        <result property="qiyezhanghao" column="qiyezhanghao"/>
+        <result property="dailigongsizhanghao" column="dailigongsizhanghao"/>
+        <result property="dailigongsimingcheng" column="dailigongsimingcheng"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="fuwuchengnuo" column="fuwuchengnuo"/>
+        <result property="zizhiwenjian" column="zizhiwenjian"/>
+    </resultMap>
+
+    <select id="selectListView"
+            resultType="com.cl.entity.view.ChengjieqingqiuView">
+        SELECT chengjieqingqiu.* FROM chengjieqingqiu chengjieqingqiu
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+
+    <select id="selectView"
+            resultType="com.cl.entity.view.ChengjieqingqiuView">
+        SELECT * FROM chengjieqingqiu chengjieqingqiu
+        <where>1=1 ${ew.sqlSegment}</where>
+    </select>
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.DailipingjiaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.DailipingjiaEntity" id="dailipingjiaMap">
+        <result property="xiangmumingcheng" column="xiangmumingcheng"/>
+        <result property="dailigongsizhanghao" column="dailigongsizhanghao"/>
+        <result property="dailigongsimingcheng" column="dailigongsimingcheng"/>
+        <result property="manyidu" column="manyidu"/>
+        <result property="pingjianeirong" column="pingjianeirong"/>
+        <result property="yezhuzhanghao" column="yezhuzhanghao"/>
+        <result property="yezhumingcheng" column="yezhumingcheng"/>
+    </resultMap>
+
+	<select id="selectListView"
+		resultType="com.cl.entity.view.DailipingjiaView" >
+
+		SELECT  dailipingjia.* FROM dailipingjia  dailipingjia 	
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.DailipingjiaView" >
+		SELECT * FROM dailipingjia  dailipingjia <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+</mapper>
